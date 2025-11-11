@@ -281,8 +281,13 @@ submitBtn.addEventListener("click", () => {
 db.ref("shoutouts").orderByChild("timestamp").on("value", snapshot => {
   const shoutouts = [];
   snapshot.forEach(childSnap => {
-    shoutouts.push({ key: childSnap.key, name: childSnap.val().name });
+  const data = childSnap.val();
+  shoutouts.push({
+    key: childSnap.key,
+    name: data.name,
+    timestamp: data.timestamp || 0
   });
+});
 
   // Keep oldest first (first-come-first-serve)
   shoutouts.sort((a, b) => a.timestamp - b.timestamp);

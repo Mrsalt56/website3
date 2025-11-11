@@ -720,8 +720,11 @@
     </div>
   </div>
 
-<script type="module">
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js"></script>">
 
+
+<script>
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDyk5FAyCRyAn6ll5_nfSV5e16mvi1l-n4",
@@ -801,8 +804,6 @@ db.ref("shoutouts").orderByKey().limitToLast(10).on("value", snapshot => {
 });
 </script>
 
-<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js"></script>
 <script src="script.js"></script>
   
 </body>
